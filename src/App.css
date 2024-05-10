@@ -1,0 +1,128 @@
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffcc00;
+  /* Change the color on hover */
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  /* Use flexbox layout */
+  justify-content: space-between;
+  /* Space items evenly */
+  align-items: center;
+  /* Align items vertically */
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffcc00;
+  /* Change the color on hover */
+}
+
+.login-button {
+  background-color: #ffcc00;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #ffdb4d;
+  /* Change the background color on hover */
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 40px;
+  /* Adjust according to your logo size */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-right: 10px;
+}
+
+.brand-name {
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbar-item {
+  margin-right: 20px;
+}
+
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-link:hover {
+  color: #ffcc00;
+}
+
+.active-link {
+  border: 2px solid #ffcc00;
+  /* Add border to the active link */
+  font-size: 1.1em;
+  /* Increase font size of the active link */
+}

@@ -1,0 +1,28 @@
+.head-background {
+  background-color: white;
+  padding: 1.5rem;
+}
+
+.head-section {
+  color: #002c42;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  cursor: pointer;
+
+}
+
+.active,
+.head-section:hover {
+  color: orange;
+  font-size: larger;
+  text-shadow: aliceblue;
+}
+
+.head-section:hover {
+  border-bottom: 4px solid rgb(147 51 234);
+  border-left: 4px solid rgb(147 51 234);
+  border-radius: 15px;
+  font-size: larger;
+
+}
