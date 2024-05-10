@@ -26,7 +26,7 @@ const Banner = () => {
         <SwiperSlide>
           <img className='h-[700px]' src={banner3} alt="" />
           <div className="absolute font-light bottom-12 left-16 text-white p-4">
-            <p className=' text-2xl uppercase'>Books are like keys to uncharted realms, portals to distant lands, and windows into the souls of both authors and readers. In their pages, you will find not just words, but entire universes waiting to be explored.</p>
+            <p className=' text-2xl uppercase '>Books are like keys to uncharted realms, portals to distant lands, and windows into the souls of both authors and readers. In their pages, you will find not just words, but entire universes waiting to be explored.</p>
           </div>
         </SwiperSlide>
 
