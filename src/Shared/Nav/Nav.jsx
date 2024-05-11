@@ -73,7 +73,7 @@ const Nav = () => {
         </label>
 
         {/* navbar End Button */}
-        <button type="button" className="Yellow-Button bg-yellow-500 rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
+        <button type="button" className="Yellow-Button rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
 
 
         {/* Profile is here*/}
