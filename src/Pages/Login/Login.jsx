@@ -1,10 +1,46 @@
+import { useContext, useState } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
+  const [success, setSuccess] = useState('')
+  const [error, setError] = useState('')
+  const { signIn } = useContext(AuthContext)
+
+  // sign in button's function
+  const handleSignIn = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.currentTarget)
+    const email = form.get('email')
+    const password = form.get('password')
+    console.log(email, password);
+
+    signIn(email, password)
+      .then(result => {
+        const response = result.user;
+        setSuccess(response)
+        // navigate(location?.state ? location.state : "/")
+        Swal.fire({
+          title: 'Success!',
+          text: 'Thank you for sign Up',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+      })
+      .catch(error => {
+        const errorMessege = error.messege;
+
+        setError(errorMessege)
+      })
+
+  }
+
   return (
     <section className="bg-white dark:bg-gray-900">
       <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
-        <form className="w-full max-w-md">
+        <form onSubmit={handleSignIn} className="w-full max-w-md">
 
           <h1 className="mt-3 text-2xl font-semibold text-gray-800 capitalize sm:text-3xl dark:text-white">sign In</h1>
 
@@ -15,7 +51,8 @@ const Login = () => {
               </svg>
             </span>
 
-            <input type="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address" />
+            <input type="email" name="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address" />
+
           </div>
 
           <div className="relative flex items-center mt-4">
@@ -25,7 +62,7 @@ const Login = () => {
               </svg>
             </span>
 
-            <input type="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" />
+            <input type="password" name="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" />
           </div>
 
           <div className="mt-6">
@@ -47,11 +84,17 @@ const Login = () => {
             </a>
 
             <div className="mt-6 text-center ">
-              <a href="#" className="text-sm text-blue-500 hover:underline dark:text-blue-400">
-                Don’t have an account yet? Sign up
-              </a>
+              <Link to={'/register'}>
+                <button href="#" className="text-sm text-blue-500 hover:underline dark:text-blue-400">
+                  Don’t have an account yet? Sign up
+                </button>
+              </Link>
             </div>
           </div>
+          {
+            error ? <p className="text-red-500">{error}</p> :
+              success && <p className="text-2xl text-green-500">{success}</p>
+          }
         </form>
       </div>
     </section>
