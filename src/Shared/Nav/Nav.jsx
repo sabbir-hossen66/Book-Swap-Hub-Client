@@ -73,8 +73,9 @@ const Nav = () => {
         </label>
 
         {/* navbar End Button */}
-        <button type="button" className="Yellow-Button rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
-
+        <Link to={'/login'}>
+          <button type="button" className="Yellow-Button rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
+        </Link>
 
         {/* Profile is here*/}
         {/* <div className="avatar online">

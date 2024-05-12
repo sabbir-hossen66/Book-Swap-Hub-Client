@@ -3,6 +3,7 @@ import Root from "../layout/Root";
 import Queries from "../Pages/Queries/Queries";
 import Home from "../Pages/Home/Home";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Login from "../Pages/Login/Login";
 
 
 export const router = createBrowserRouter([
@@ -20,8 +21,8 @@ export const router = createBrowserRouter([
         element: <Queries></Queries>,
       },
       {
-        path: "/Log-in",
-        element: <div>this is about</div>,
+        path: "/login",
+        element: <Login></Login>,
       },
     ],
   },
