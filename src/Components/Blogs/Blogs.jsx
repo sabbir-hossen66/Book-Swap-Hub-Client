@@ -16,11 +16,11 @@ const Blogs = () => {
 
           <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
             <div>
-              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1644018335954-ab54c83e007f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
+              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://i.ibb.co/HKmp4Yt/dang-nguy-n-I1v-t-KAJzzc-unsplash.jpg" alt="" />
 
               <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
                 <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
-                  All the features you want to know
+                  Join the Conversation at our Book Swap Hub
                 </a>
 
                 <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
@@ -32,11 +32,11 @@ const Blogs = () => {
             </div>
 
             <div>
-              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
+              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://i.ibb.co/qB8YxG7/pexels-koshevaya-k-2365312-4031547.jpg" alt="" />
 
               <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
                 <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
-                  How to use sticky note for problem solving
+                  Embracing the Spirit of Book Swapping
                 </a>
 
                 <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
@@ -44,6 +44,39 @@ const Blogs = () => {
                 </p>
 
                 <p className="mt-3 text-sm text-blue-500">20 October 2024</p>
+              </div>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-8 mt-8 lg:grid-cols-2">
+            <div>
+              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://i.ibb.co/kVLr2p2/pexels-karolina-grabowska-4468170.jpg" alt="" />
+
+              <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
+                  Inside Our Book Swap Community
+                </a>
+
+                <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                  In a world where time races by and distractions clamor for our attention, there exists a sanctuary of serenity.
+                </p>
+
+                <p className="mt-3 text-sm text-blue-500">22 October 2024</p>
+              </div>
+            </div>
+
+            <div>
+              <img className="relative z-10 object-cover w-full rounded-md h-96" src="https://i.ibb.co/7rx51Zs/jaredd-craig-HH4-WBGNyltc-unsplash.jpg" alt="" />
+
+              <div className="relative z-20 max-w-lg p-6 mx-auto -mt-20 bg-white rounded-md shadow dark:bg-gray-900">
+                <a href="#" className="font-semibold text-gray-800 hover:underline dark:text-white md:text-xl">
+                  Exploring the World of Literary Exchange
+                </a>
+
+                <p className="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
+                  We are transported to lands unknown, encountering heroes, villains, and everything in between. We walk beside them.
+                </p>
+
+                <p className="mt-3 text-sm text-blue-500">23 October 2024</p>
               </div>
             </div>
           </div>
