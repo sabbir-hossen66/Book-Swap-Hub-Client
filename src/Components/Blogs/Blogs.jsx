@@ -1,9 +1,38 @@
 
+import { useState } from "react";
+import { TypeAnimation } from "react-type-animation";
+
 
 const Blogs = () => {
+  const [textColor, setTextColor] = useState('red');
   return (
     <div>
-      {/* <h2>Hello blogs</h2> */}
+      <div
+        style={{
+          fontSize: '35px',
+          color: textColor,
+          textAlign: "center",
+          fontWeight: "bold"
+          /* when working without ref and classNames, the manipulated style needs to be
+           applied to the parent element, because the TypeAnimation component is perma-memoized */
+        }}
+      >
+        <TypeAnimation
+          sequence={[
+            'This Is About',
+            800,
+            () => setTextColor('firebrick'),
+            'This Is About Books Blog',
+            800,
+            () => setTextColor('deeppink'),
+            'This Is About Books Blog Section',
+            1000,
+            () => setTextColor('blue'),
+            '',
+          ]}
+          repeat={Infinity}
+        />
+      </div>
       <section className="bg-white dark:bg-gray-900">
         <div className="container px-6 py-10 mx-auto">
           <div className="text-center">
