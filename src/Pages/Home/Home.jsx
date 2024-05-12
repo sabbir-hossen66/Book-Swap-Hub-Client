@@ -1,6 +1,7 @@
 import Banner from "../../Components/Banner/Banner";
 import BannerImg from "../../Components/BannerImg/BannerImg";
 import Blogs from "../../Components/Blogs/Blogs";
+import GroupMembers from "../../Components/GroupMembers/GroupMembers";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
       </div>
       <BannerImg></BannerImg>
       <Blogs></Blogs>
+      <GroupMembers></GroupMembers>
     </>
   );
 };
