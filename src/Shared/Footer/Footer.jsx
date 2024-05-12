@@ -50,8 +50,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center px-6 pt-12 text-sm">
+      <div className="flex justify-center items-center px-6 pt-12 text-sm">
         <span className="text-gray-600">© Copyright 2024. All Rights Reserved.</span>
+
       </div>
     </footer>
   );
