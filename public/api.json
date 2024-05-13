@@ -2,13 +2,13 @@
   {
     "product_image": "https://i.ibb.co/cXgMGtw/pexels-leventsimsek-4245021.jpg",
     "query_title": " Harry Potter and the Philosopher's Stone",
-    "product_name": "Harry Potter and the Philosopher's Stone",
+    "product_name": "Harry Potter",
     "brand_name": "J.K. Rowling",
-    "alternation_reason": "Finished reading and looking for a new book",
+    "alternation_reason": "Finished, looking for a new book",
     "date_posted": "2024-05-13",
     "user_info": {
       "name": "John Doe",
-      "thumbnail_image": "path/to/user1_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/PQWDwYs/prf.jpg"
     }
   },
   {
@@ -20,7 +20,7 @@
     "date_posted": "2024-05-12",
     "user_info": {
       "name": "Jane Smith",
-      "thumbnail_image": "path/to/user2_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/1zk84CS/prf1.jpg"
     }
   },
   {
@@ -32,7 +32,7 @@
     "date_posted": "2024-05-11",
     "user_info": {
       "name": "Alice Johnson",
-      "thumbnail_image": "path/to/user3_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/PQWDwYs/prf.jpg"
     }
   },
   {
@@ -44,7 +44,7 @@
     "date_posted": "2024-05-10",
     "user_info": {
       "name": "Bob Williams",
-      "thumbnail_image": "path/to/user4_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/PQWDwYs/prf.jpg"
     }
   },
   {
@@ -52,11 +52,11 @@
     "query_title": "Looking for To Kill a Mockingbird",
     "product_name": "To Kill a Mockingbird",
     "brand_name": "Harper Lee",
-    "alternation_reason": "Gifted the book and already have a copy",
+    "alternation_reason": "Gifted book and already have a copy",
     "date_posted": "2024-05-09",
     "user_info": {
       "name": "Emily Brown",
-      "thumbnail_image": "path/to/user5_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/1zk84CS/prf1.jpg"
     }
   },
   {
@@ -68,7 +68,7 @@
     "date_posted": "2024-05-08",
     "user_info": {
       "name": "David Wilson",
-      "thumbnail_image": "path/to/user6_thumbnail.jpg"
+      "thumbnail_image": "https://i.ibb.co/1zk84CS/prf1.jpg"
     }
   }
 ]
