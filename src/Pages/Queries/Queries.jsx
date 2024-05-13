@@ -13,12 +13,14 @@ const Queries = () => {
   return (
     <div>
       <h2>BookHub Quries:</h2>
-      {
-        quries.map(query => <Query
-          key={query.id}
-          query={query}
-        ></Query>)
-      }
+      <div className="container mx-auto gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-16">
+        {
+          quries.map(singleQuery => <Query
+            key={singleQuery.id}
+            singleQuery={singleQuery}
+          ></Query>)
+        }
+      </div>
     </div>
   );
 };

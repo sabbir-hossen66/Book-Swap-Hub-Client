@@ -1,7 +1,7 @@
 [
   {
-    "product_image": "path/to/image1.jpg",
-    "query_title": "Looking for Harry Potter and the Philosopher's Stone",
+    "product_image": "https://i.ibb.co/cXgMGtw/pexels-leventsimsek-4245021.jpg",
+    "query_title": " Harry Potter and the Philosopher's Stone",
     "product_name": "Harry Potter and the Philosopher's Stone",
     "brand_name": "J.K. Rowling",
     "alternation_reason": "Finished reading and looking for a new book",
@@ -12,7 +12,7 @@
     }
   },
   {
-    "product_image": "path/to/image2.jpg",
+    "product_image": "https://i.ibb.co/vYxFxvN/pexels-ena-marinkovic-1814213-3698600.jpg",
     "query_title": "Offering Game of Thrones Book Set",
     "product_name": "Game of Thrones Book Set",
     "brand_name": "George R.R. Martin",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "product_image": "path/to/image3.jpg",
+    "product_image": "https://i.ibb.co/KLBhM33/pexels-suzyhazelwood-1130980.jpg",
     "query_title": "Looking for The Great Gatsby",
     "product_name": "The Great Gatsby",
     "brand_name": "F. Scott Fitzgerald",
@@ -36,7 +36,7 @@
     }
   },
   {
-    "product_image": "path/to/image4.jpg",
+    "product_image": "https://i.ibb.co/mTMvg7K/pexels-nevzat-ozturk-385499725-14680509.jpg",
     "query_title": "Offering The Hunger Games Trilogy",
     "product_name": "The Hunger Games Trilogy",
     "brand_name": "Suzanne Collins",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "product_image": "path/to/image5.jpg",
+    "product_image": "https://i.ibb.co/vx9Xgkj/pexels-thought-catalog-317580-2228586.jpg",
     "query_title": "Looking for To Kill a Mockingbird",
     "product_name": "To Kill a Mockingbird",
     "brand_name": "Harper Lee",
@@ -60,7 +60,7 @@
     }
   },
   {
-    "product_image": "path/to/image6.jpg",
+    "product_image": "https://i.ibb.co/122VW3k/pexels-tara-winstead-8850748.jpg",
     "query_title": "Offering Lord of the Rings Trilogy",
     "product_name": "Lord of the Rings Trilogy",
     "brand_name": "J.R.R. Tolkien",

@@ -3,6 +3,7 @@ import BannerImg from "../../Components/BannerImg/BannerImg";
 import Blogs from "../../Components/Blogs/Blogs";
 import Contact from "../../Components/Contact/Contact";
 import GroupMembers from "../../Components/GroupMembers/GroupMembers";
+import Queries from "../Queries/Queries";
 
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <Banner></Banner>
       </div>
       <BannerImg></BannerImg>
+      <Queries></Queries>
       <Blogs></Blogs>
       <GroupMembers></GroupMembers>
       <Contact></Contact>
