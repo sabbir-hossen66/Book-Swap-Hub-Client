@@ -2,6 +2,22 @@ import Lottie from 'lottie-react';
 import lottiePhoto from '../../assets/photos/banner/Animation - 1715582454787.json'
 
 const Register = () => {
+
+
+  const handleSignUP = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget)
+    const name1 = form.get('firstName')
+    const name2 = form.get('lastName')
+    const email = form.get('email')
+    const photo = form.get('photoUrl')
+    const phone = form.get('phoneNumber')
+    const password = form.get('password')
+
+    console.log(name1, name2, email, photo, phone, password);
+  }
+
   return (
     <div>
 
@@ -24,15 +40,15 @@ const Register = () => {
                 </h1>
               </div>
 
-              <form className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
+              <form onSubmit={handleSignUP} className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">First Name</label>
-                  <input type="text" placeholder="John" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="text" placeholder="John" name='firstName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                 </div>
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Last name</label>
-                  <input type="text" placeholder="Snow" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="text" placeholder="Snow" name='lastName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                 </div>
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Email address</label>
@@ -46,11 +62,12 @@ const Register = () => {
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Photo Url</label>
-                  <input type="photoUrl" placeholder="submit your photoUrl" name="photoUrl" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="photoUrl" placeholder="submit your photoUrl" id='photoURL' name="photoUrl" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+
                 </div>
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Phone number</label>
-                  <input type="text" placeholder="XXX-XX-XXXX-XXX" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="text" placeholder="XXX-XX-XXXX-XXX" name='phoneNumber' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                 </div>
 
 
