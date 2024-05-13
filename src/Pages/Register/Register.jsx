@@ -14,7 +14,7 @@ const Register = () => {
 
           <div className="flex items-center w-full max-w-7xl p-8 mx-auto lg:px-12 lg:w-3/5">
             <div className="w-full">
-              <div className='flex justify-center items-center'>
+              <div className=' flex-cols-1 lg:flex justify-center items-center'>
 
                 <div>
                   <Lottie className='w-[320px]' animationData={lottiePhoto} />

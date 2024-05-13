@@ -3,6 +3,8 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
+import loginLottie from '../../assets/photos/banner/Animation - 1715583388356.json'
+import Lottie from "lottie-react";
 
 const Login = () => {
   const [success, setSuccess] = useState('')
@@ -39,8 +41,11 @@ const Login = () => {
 
   return (
     <section className=" bg-white dark:bg-gray-900">
-      <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
+      <div className="container flex-cols-1 lg:flex items-center justify-center min-h-screen px-6 mx-auto">
+        <Lottie className="w-[420px] mr-16" animationData={loginLottie} />
+
         <form onSubmit={handleSignIn} className="w-full max-w-md">
+
 
           <h1 className="mt-3 text-2xl font-semibold text-[#3B82F6] capitalize sm:text-3xl ">
             sign In</h1>
