@@ -1,7 +1,23 @@
 import Lottie from 'lottie-react';
 import lottiePhoto from '../../assets/photos/banner/Animation - 1715582454787.json'
+import { useContext, useState } from 'react';
+import { AuthContext } from '../../Providers/AuthProviders';
+import { useLocation, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+  const { createUser } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
+  const [error, setError] = useState('')
+  const [success, setSuccess] = useState('')
+
+  // dynamic error
+  const [nameErr1, setNameErr] = useState('')
+  const [nameErr2, setNameErr1] = useState('')
+  const [urlErr, setUrlErr] = useState('')
+  const [emailErr, setEmailErr] = useState('')
+  const [PasswordErr, setPasswrodErr] = useState('')
 
 
   const handleSignUP = (e) => {
@@ -16,6 +32,66 @@ const Register = () => {
     const password = form.get('password')
 
     console.log(name1, name2, email, photo, phone, password);
+
+    // creating user
+    createUser(email, password)
+      .then(result => {
+        const response = result.user;
+        setSuccess(response)
+        // navigate(location?.state ? location.state : "/login")
+        Swal.fire({
+          title: 'Success!',
+          text: 'Thank you for sign Up',
+          icon: 'success',
+          confirmButtonText: 'Cool'
+        })
+        navigate(location?.state ? location.state : "/login")
+      })
+      .catch(error => {
+        const errorMessege = error.messege;
+        setError(errorMessege)
+      })
+
+
+    // dynamic error set
+    if (!name1) {
+      setNameErr('Please fullfill your name')
+      return;
+    }
+    setNameErr('')
+    if (!name2) {
+      setNameErr1('Please fullfill your name')
+      return;
+    }
+    setNameErr('')
+
+    if (!photo == 'text') {
+      setUrlErr('Please give us an url')
+      return;
+    }
+    setUrlErr('')
+    if (!email) {
+      setEmailErr('please write your email')
+      return;
+    }
+    setEmailErr('')
+
+    if (password.length < 6) {
+      setPasswrodErr('Create atleast 6 digit password')
+      return;
+    }
+
+    else if (!/[A-Z]/.test(password)) {
+      setPasswrodErr('Atleast one letter should be Uppercase')
+      return
+    }
+
+    else if (!/[a-z]/.test(password)) {
+      setPasswrodErr('Atleast one letter should e Lowercase')
+      return;
+    }
+    setPasswrodErr('')
+
   }
 
   return (
@@ -44,26 +120,30 @@ const Register = () => {
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">First Name</label>
                   <input type="text" placeholder="John" name='firstName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <p className=' text-red-500'>{nameErr1}</p>
                 </div>
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Last name</label>
                   <input type="text" placeholder="Snow" name='lastName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <p className=' text-red-500'>{nameErr2}</p>
                 </div>
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Email address</label>
                   <input type="email" placeholder="Enter Your Email" name="email" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <p className=' text-red-500'>{emailErr}</p>
                 </div>
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Password</label>
                   <input type="password" placeholder="Enter your password" name="password" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <p className=' text-red-500'>{PasswordErr}</p>
                 </div>
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Photo Url</label>
                   <input type="photoUrl" placeholder="submit your photoUrl" id='photoURL' name="photoUrl" className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
-
+                  <p className=' text-red-500'>{urlErr}</p>
                 </div>
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Phone number</label>
@@ -87,6 +167,10 @@ const Register = () => {
                       clipRule="evenodd" />
                   </svg>
                 </button>
+                {
+                  error ? <p className="text-red-500">{error}</p> :
+                    success && <p className="text-2xl text-green-500">{success}</p>
+                }
               </form>
             </div>
           </div>

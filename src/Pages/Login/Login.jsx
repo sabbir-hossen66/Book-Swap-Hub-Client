@@ -1,15 +1,17 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import loginLottie from '../../assets/photos/banner/Animation - 1715583388356.json'
 import Lottie from "lottie-react";
 
 const Login = () => {
+  const { signIn } = useContext(AuthContext)
   const [success, setSuccess] = useState('')
   const [error, setError] = useState('')
-  const { signIn } = useContext(AuthContext)
+  const location = useLocation()
+  const navigate = useNavigate()
 
   // sign in button's function
   const handleSignIn = (e) => {
@@ -23,7 +25,7 @@ const Login = () => {
       .then(result => {
         const response = result.user;
         setSuccess(response)
-        // navigate(location?.state ? location.state : "/")
+        navigate(location?.state ? location.state : "/")
         Swal.fire({
           title: 'Success!',
           text: 'Thank you for sign Up',
@@ -57,7 +59,7 @@ const Login = () => {
               </svg>
             </span>
 
-            <input type="email" name="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address" />
+            <input type="email" name="email" className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Email address" required />
 
           </div>
 
@@ -68,7 +70,7 @@ const Login = () => {
               </svg>
             </span>
 
-            <input type="password" name="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" />
+            <input type="password" name="password" className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40" placeholder="Password" required />
           </div>
 
           <div className="mt-6">
@@ -98,7 +100,7 @@ const Login = () => {
             </div>
           </div>
           {
-            error ? <p className="text-red-500">{error}</p> :
+            error ? <p className="text-red-500 text-xl">{error}</p> :
               success && <p className="text-2xl text-green-500">{success}</p>
           }
         </form>
