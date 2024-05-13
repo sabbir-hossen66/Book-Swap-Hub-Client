@@ -1,0 +1,74 @@
+[
+  {
+    "product_image": "path/to/image1.jpg",
+    "query_title": "Looking for Harry Potter and the Philosopher's Stone",
+    "product_name": "Harry Potter and the Philosopher's Stone",
+    "brand_name": "J.K. Rowling",
+    "alternation_reason": "Finished reading and looking for a new book",
+    "date_posted": "2024-05-13",
+    "user_info": {
+      "name": "John Doe",
+      "thumbnail_image": "path/to/user1_thumbnail.jpg"
+    }
+  },
+  {
+    "product_image": "path/to/image2.jpg",
+    "query_title": "Offering Game of Thrones Book Set",
+    "product_name": "Game of Thrones Book Set",
+    "brand_name": "George R.R. Martin",
+    "alternation_reason": "Duplicate copy",
+    "date_posted": "2024-05-12",
+    "user_info": {
+      "name": "Jane Smith",
+      "thumbnail_image": "path/to/user2_thumbnail.jpg"
+    }
+  },
+  {
+    "product_image": "path/to/image3.jpg",
+    "query_title": "Looking for The Great Gatsby",
+    "product_name": "The Great Gatsby",
+    "brand_name": "F. Scott Fitzgerald",
+    "alternation_reason": "Not interested anymore",
+    "date_posted": "2024-05-11",
+    "user_info": {
+      "name": "Alice Johnson",
+      "thumbnail_image": "path/to/user3_thumbnail.jpg"
+    }
+  },
+  {
+    "product_image": "path/to/image4.jpg",
+    "query_title": "Offering The Hunger Games Trilogy",
+    "product_name": "The Hunger Games Trilogy",
+    "brand_name": "Suzanne Collins",
+    "alternation_reason": "Upgraded to hardcover edition",
+    "date_posted": "2024-05-10",
+    "user_info": {
+      "name": "Bob Williams",
+      "thumbnail_image": "path/to/user4_thumbnail.jpg"
+    }
+  },
+  {
+    "product_image": "path/to/image5.jpg",
+    "query_title": "Looking for To Kill a Mockingbird",
+    "product_name": "To Kill a Mockingbird",
+    "brand_name": "Harper Lee",
+    "alternation_reason": "Gifted the book and already have a copy",
+    "date_posted": "2024-05-09",
+    "user_info": {
+      "name": "Emily Brown",
+      "thumbnail_image": "path/to/user5_thumbnail.jpg"
+    }
+  },
+  {
+    "product_image": "path/to/image6.jpg",
+    "query_title": "Offering Lord of the Rings Trilogy",
+    "product_name": "Lord of the Rings Trilogy",
+    "brand_name": "J.R.R. Tolkien",
+    "alternation_reason": "Bought the collector's edition",
+    "date_posted": "2024-05-08",
+    "user_info": {
+      "name": "David Wilson",
+      "thumbnail_image": "path/to/user6_thumbnail.jpg"
+    }
+  }
+]
