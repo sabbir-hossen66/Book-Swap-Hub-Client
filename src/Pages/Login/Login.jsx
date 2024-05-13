@@ -42,7 +42,7 @@ const Login = () => {
       <div className="container flex items-center justify-center min-h-screen px-6 mx-auto">
         <form onSubmit={handleSignIn} className="w-full max-w-md">
 
-          <h1 className="mt-3 text-2xl font-semibold dark:text-[#3B82F6] capitalize sm:text-3xl ">
+          <h1 className="mt-3 text-2xl font-semibold text-[#3B82F6] capitalize sm:text-3xl ">
             sign In</h1>
 
           <div className="relative flex items-center mt-8">
