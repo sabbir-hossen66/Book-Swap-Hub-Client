@@ -1,6 +1,12 @@
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProviders";
 
 
 const AddQuries = () => {
+
+  const { user } = useContext(AuthContext)
+  console.log(user);
+
   return (
     <div>
       <h2>You Can Add Here Any Quries</h2>
@@ -19,10 +25,10 @@ const AddQuries = () => {
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Subcategory Name</span>
+                <span className="label-text">Product_Brand</span>
               </label>
               <label className="input-group">
-                <input type="text" name="subName" placeholder="sub name" className="input input-bordered w-full" />
+                <input type="text" name="brandName" placeholder="Type Your SubCategory Name" className="input input-bordered w-full" />
               </label>
             </div>
           </div>
@@ -30,18 +36,18 @@ const AddQuries = () => {
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Short Description</span>
+                <span className="label-text">Product Image-URL</span>
               </label>
               <label className="input-group">
-                <input type="text" name="description" placeholder="short description" className="input input-bordered w-full" />
+                <input type="url" name="photo" placeholder="Drop Here Product Image-URL" className="input input-bordered w-full" />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text">Query_Title</span>
               </label>
               <label className="input-group">
-                <input type="text" name="price" placeholder="price" className="input input-bordered w-full" />
+                <input type="text" name="queryTitle" placeholder="Type Here Query Title" className="input input-bordered w-full" />
               </label>
             </div>
           </div>
@@ -49,10 +55,10 @@ const AddQuries = () => {
           <div className="md:flex mb-8">
             <div className="form-control md:w-1/2">
               <label className="label">
-                <span className="label-text">Rating</span>
+                <span className="label-text">Boycotting Reason Details</span>
               </label>
               <label className="input-group">
-                <input type="text" name="rating" placeholder="rating" className="input input-bordered w-full" />
+                <input type="text" name="reasonDetails" placeholder="rating" className="input input-bordered w-full" />
               </label>
             </div>
             <div className="form-control md:w-1/2 ml-4">

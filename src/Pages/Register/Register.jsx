@@ -24,8 +24,8 @@ const Register = () => {
     e.preventDefault();
     console.log(e.currentTarget);
     const form = new FormData(e.currentTarget)
-    const name1 = form.get('firstName')
-    const name2 = form.get('lastName')
+    const name1 = form.get('name')
+    const name2 = form.get('name')
     const email = form.get('email')
     const photo = form.get('photoUrl')
     const phone = form.get('phoneNumber')
@@ -37,6 +37,7 @@ const Register = () => {
     createUser(email, password)
       .then(result => {
         const response = result.user;
+        console.log(response);
         setSuccess(response)
         // navigate(location?.state ? location.state : "/login")
         Swal.fire({
@@ -119,13 +120,13 @@ const Register = () => {
               <form onSubmit={handleSignUP} className="grid grid-cols-1 gap-6 mt-8 md:grid-cols-2">
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">First Name</label>
-                  <input type="text" placeholder="John" name='firstName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="text" placeholder="John" name='name' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                   <p className=' text-red-500'>{nameErr1}</p>
                 </div>
 
                 <div>
                   <label className="block mb-2 text-sm text-[#5D9AE5]">Last name</label>
-                  <input type="text" placeholder="Snow" name='lastName' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
+                  <input type="text" placeholder="Snow" name='name' className="block w-full px-5 py-3 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-lg dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40" />
                   <p className=' text-red-500'>{nameErr2}</p>
                 </div>
                 <div>

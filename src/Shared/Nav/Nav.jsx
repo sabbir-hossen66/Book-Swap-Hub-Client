@@ -1,8 +1,18 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import './Nav.css'
+import { AuthContext } from "../../Providers/AuthProviders";
 
 const Nav = () => {
+  const { user, logOut, } = useContext(AuthContext)
+  console.log(user, logOut);
+
+  const handleLogOut = () => {
+    logOut()
+      .then()
+      .catch()
+  }
+
   const [theme, setTheme] = useState('light')
 
   useEffect(() => {
@@ -73,9 +83,48 @@ const Nav = () => {
         </label>
 
         {/* navbar End Button */}
-        <Link to={'/login'}>
+        {
+
+          user ?
+
+            <div className="flex justify-center items-center">
+
+              {/* dropdwon */}
+
+              <div className="dropdown dropdown-hover">
+                <div className="avatar online">
+                  <div className="w-16 rounded-full">
+                    <img src={user.photoURL} />
+                  </div>
+                </div>
+                <ul tabIndex={0} className="dropdown-content z-[1] mb-2 menu p-2 shadow bg-indigo-300 font-semibold rounded-box w-40 text-white">
+                  <li>Name- {user.displayName}</li>
+                  {/* <Link to={'/another-upProfile'}><li className="underline">See UpdatedProfile</li></Link> */}
+                </ul>
+              </div>
+
+              <div>
+                <button onClick={handleLogOut} type="button" className="relative px-8 py-2 ml-4 overflow-hidden font-semibold rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">LogOut
+                </button>
+              </div>
+
+            </div>
+            :
+            <div>
+              <Link to='/login'>
+                <button type="button" className="relative px-8 py-2 ml-4 overflow-hidden font-semibold rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">Login
+
+                </button>
+              </Link>
+            </div>
+
+        }
+
+
+        {/* ------------------- */}
+        {/* <Link to={'/login'}>
           <button type="button" className="Yellow-Button rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
-        </Link>
+        </Link> */}
 
         {/* Profile is here*/}
         {/* <div className="avatar online">
