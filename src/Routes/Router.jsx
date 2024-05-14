@@ -7,6 +7,7 @@ import Register from "../Pages/Register/Register";
 import MyQuries from "../Pages/MyQuries/MyQuries";
 import AddQuries from "../Components/AddQuries/AddQuries";
 import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
+import MySingleQuery from "../Components/MySingleQuery/MySingleQuery";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +23,12 @@ export const router = createBrowserRouter([
       {
         path: "/my-queries",
         element: <MyQuries></MyQuries>,
+        loader: () => fetch('http://localhost:5000/posts')
+      },
+      {
+        path: "/mySingle-query",
+        element: <MySingleQuery></MySingleQuery>,
+
       },
       {
         path: "/add-quries",

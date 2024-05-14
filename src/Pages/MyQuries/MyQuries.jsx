@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+import MySingleQuery from "../../Components/MySingleQuery/MySingleQuery";
 
 
 
 const MyQuries = () => {
+  const books = useLoaderData()
+
   const [textColor, setTextColor] = useState('red');
 
   return (
@@ -37,7 +40,15 @@ const MyQuries = () => {
         />
       </div>
       {/* stylishling react typer finished */}
+      <div>
 
+        {
+          books.map(book => <MySingleQuery
+            key={book._id}
+            book={book}
+          ></MySingleQuery>)
+        }
+      </div>
 
       {/* go to add quries page */}
       <Link to={'/add-quries'}>
