@@ -1,7 +1,12 @@
 
 
 const MySingleQuery = ({ book }) => {
-  const { productName, brandProduct, title, boycot, productPhoto, email, userName, image, time } = book;
+  const { _id, productName, brandProduct, title, boycot, productPhoto, email, userName, image, time } = book;
+
+
+  const handleDelete = (_id) => {
+    console.log(_id);
+  }
 
   return (
     <div>
@@ -14,9 +19,9 @@ const MySingleQuery = ({ book }) => {
             alt="book cover"
           />
           <div className="absolute inset-0 bg-black opacity-25"></div>
-          <div className="absolute inset-0 flex items-center justify-center">
+          {/* <div className="absolute inset-0 flex items-center justify-center">
             <p className="text-white font-semibold text-lg ">Book Title</p>
-          </div>
+          </div> */}
         </div>
         <div className="px-6 py-4">
           <div className="flex justify-between items-center">
@@ -30,14 +35,16 @@ const MySingleQuery = ({ book }) => {
 
             </div>
             <div className="flex flex-col">
+              <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded mb-2">
+                View Detail
+              </button>
               <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">
-                Button 1
+                Update
               </button>
-              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mb-2">
-                Button 2
-              </button>
-              <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded">
-                Button 3
+              <button
+                onClick={() => handleDelete(_id)}
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                Delete
               </button>
             </div>
           </div>
