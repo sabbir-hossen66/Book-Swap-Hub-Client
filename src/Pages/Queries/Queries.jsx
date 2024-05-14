@@ -35,7 +35,7 @@ const Queries = () => {
             () => setTextColor('red'),
             'This Is About Quries Part',
             1000,
-            () => setTextColor('syan'),
+            () => setTextColor('[#FB923C]'),
             '',
           ]}
           repeat={Infinity}

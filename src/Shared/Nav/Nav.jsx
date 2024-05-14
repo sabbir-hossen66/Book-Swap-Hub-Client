@@ -27,8 +27,8 @@ const Nav = () => {
 
   const navLinks = <>
     <li className="head-section font-semibold"><NavLink to={'/'}>Home</NavLink></li>
-    <li className="head-section font-semibold"><NavLink to={'/queries'}>Quries</NavLink></li>
-    <li className="head-section font-semibold"><NavLink to={'/add-item'}>Add Item</NavLink></li>
+    <li className="head-section font-semibold"><NavLink to={'/my-queries'}>MyQuries</NavLink></li>
+    <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>
     <li className="head-section font-semibold"><NavLink to={'/my-list'}>My Item List</NavLink></li>
 
   </>
