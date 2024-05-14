@@ -5,6 +5,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import MyQuries from "../Pages/MyQuries/MyQuries";
+import AddQuries from "../Components/AddQuries/AddQuries";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +21,10 @@ export const router = createBrowserRouter([
       {
         path: "/my-queries",
         element: <MyQuries></MyQuries>,
+      },
+      {
+        path: "/add-quries",
+        element: <AddQuries></AddQuries>,
       },
       {
         path: "/login",

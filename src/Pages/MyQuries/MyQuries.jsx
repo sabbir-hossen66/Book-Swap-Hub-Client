@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
+
 
 
 const MyQuries = () => {
@@ -38,7 +40,9 @@ const MyQuries = () => {
 
 
       {/* go to add quries page */}
-      <button className="mx-auto block bg-[#FB923C] hover:bg-purple-600 px-8 py-4 rounded text-white border-none font-bold my-8">Go To Add Quries Page</button>
+      <Link to={'/add-quries'}>
+        <button className="mx-auto block bg-[#FB923C] hover:bg-purple-600 px-8 py-4 rounded text-white border-none font-bold my-8">Go To Add Quries Page</button>
+      </Link>
     </div>
   );
 };
