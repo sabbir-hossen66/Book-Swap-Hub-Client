@@ -3,9 +3,11 @@ import { Link, NavLink } from "react-router-dom";
 import './Nav.css'
 import { AuthContext } from "../../Providers/AuthProviders";
 
+
+
 const Nav = () => {
   const { user, logOut, } = useContext(AuthContext)
-  console.log(user, logOut);
+  console.log(user);
 
   const handleLogOut = () => {
     logOut()
@@ -38,8 +40,17 @@ const Nav = () => {
   const navLinks = <>
     <li className="head-section font-semibold"><NavLink to={'/'}>Home</NavLink></li>
     <li className="head-section font-semibold"><NavLink to={'/my-queries'}>MyQuries</NavLink></li>
-    <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>
-    <li className="head-section font-semibold"><NavLink to={'/my-list'}>My Item List</NavLink></li>
+    {
+      user?.email ?
+        <>
+          <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>
+          <li className="head-section font-semibold"><NavLink to={'/my-list'}>My Item List</NavLink></li>
+        </>
+        :
+        <>
+          {/* <button className="navbar-end"><Link to={'/login'}>login</Link></button> */}
+        </>
+    }
 
   </>
 
@@ -92,46 +103,37 @@ const Nav = () => {
               {/* dropdwon */}
 
               <div className="dropdown dropdown-hover">
+
                 <div className="avatar online">
-                  <div className="w-16 rounded-full">
+                  <div className="w-12 rounded-full">
                     <img src={user.photoURL} />
                   </div>
+
                 </div>
-                <ul tabIndex={0} className="dropdown-content z-[1] mb-2 menu p-2 shadow bg-indigo-300 font-semibold rounded-box w-40 text-white">
+                {/* <ul tabIndex={0} className="dropdown-content z-[1] mb-2 menu p-2 shadow bg-indigo-300 font-semibold rounded-box w-40 text-white">
                   <li>Name- {user.displayName}</li>
-                  {/* <Link to={'/another-upProfile'}><li className="underline">See UpdatedProfile</li></Link> */}
+                </ul> */}
+                <ul tabIndex={0} className="dropdown-content z-[1] mb-2 menu p-2 shadow bg-indigo-300 font-semibold rounded-box w-52 text-white">
+                  <li>{user.displayName}</li>
+                  <li>{user.email}</li>
                 </ul>
+
               </div>
 
               <div>
-                <button onClick={handleLogOut} type="button" className="relative px-8 py-2 ml-4 overflow-hidden font-semibold rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">LogOut
+                <button onClick={handleLogOut} type="button" className="Yellow-Button rounded relative px-6 py-2 lg:px-10 lg:py-3 ml-4 overflow-hidden font-semibold ">LogOut
                 </button>
               </div>
 
             </div>
             :
             <div>
-              <Link to='/login'>
-                <button type="button" className="relative px-8 py-2 ml-4 overflow-hidden font-semibold rounded bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white">Login
-
-                </button>
+              <Link to={'/login'}>
+                <button type="button" className="Yellow-Button rounded relative px-6 py-2 lg:px-10 lg:py-3 ml-4 overflow-hidden font-semibold ">Login</button>
               </Link>
             </div>
 
         }
-
-
-        {/* ------------------- */}
-        {/* <Link to={'/login'}>
-          <button type="button" className="Yellow-Button rounded relative px-10 py-4 ml-4 overflow-hidden font-semibold ">Login</button>
-        </Link> */}
-
-        {/* Profile is here*/}
-        {/* <div className="avatar online">
-          <div className="w-16 rounded-full">
-            <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-          </div>
-        </div> */}
 
       </div>
     </div>
