@@ -1,11 +1,19 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
+import Marquee from "react-fast-marquee";
 
 
 const AddQuries = () => {
-
   const { user } = useContext(AuthContext)
-  console.log(user);
+  // Time and date set
+  const [currentDate, setCurrentDate] = useState(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentDate(new Date());
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
 
   const handleBooksQuries = event => {
@@ -21,7 +29,9 @@ const AddQuries = () => {
     const email = user.email;
     const userName = user.displayName;
     const image = user.photoURL
-    const addQuries = { productName, brandProduct, title, boycot, productPhoto, email, userName, image }
+    const time = currentDate.toLocaleString()
+
+    const addQuries = { productName, brandProduct, title, boycot, productPhoto, email, userName, image, time }
 
     console.log(addQuries);
 
@@ -36,12 +46,23 @@ const AddQuries = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'success',
+            text: 'Do you want to continue',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+          event.target.reset()
+        }
       })
   }
 
   return (
     <div>
-      <h2>You Can Add Here Any Quries</h2>
+      <Marquee speed={200} direction={'right'}>
+        <h2 className="font-bold text-3xl text-center my-8 text-purple-500">This Is Add Quries Part </h2>
+      </Marquee>
       <div className="bg-[#F4F3F0] p-24">
         <h2 className="text-3xl font-extrabold">Please Add Your Quries</h2>
         <form onSubmit={handleBooksQuries}>
