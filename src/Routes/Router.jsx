@@ -6,6 +6,7 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import MyQuries from "../Pages/MyQuries/MyQuries";
 import AddQuries from "../Components/AddQuries/AddQuries";
+import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 
 
 export const router = createBrowserRouter([
@@ -24,7 +25,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/add-quries",
-        element: <AddQuries></AddQuries>,
+        element: <PrivateRoutes> <AddQuries></AddQuries></PrivateRoutes>,
       },
       {
         path: "/login",
