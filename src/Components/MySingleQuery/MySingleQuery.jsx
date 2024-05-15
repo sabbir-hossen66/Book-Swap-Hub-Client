@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
-const MySingleQuery = ({ book }) => {
+const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
   const { _id, productName, brandProduct, title, boycot, productPhoto, email, userName, image, time } = book;
 
 
@@ -18,11 +19,6 @@ const MySingleQuery = ({ book }) => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        // Swal.fire({
-        //   title: "Deleted!",
-        //   text: "Your file has been deleted.",
-        //   icon: "success"
-        // });
         console.log('delete ');
         fetch(`http://localhost:5000/posts/${_id}`, {
           method: 'DELETE'
@@ -31,6 +27,8 @@ const MySingleQuery = ({ book }) => {
           .then(data => {
             console.log(data);
             if (data.deletedCount > 0) {
+              const remainingBooks = seeBooks.filter(singleDeleteBooks => singleDeleteBooks._id !== _id)
+              setSeeBooks(remainingBooks)
               Swal.fire({
                 title: "Deleted!",
                 text: "Your book has been deleted.",
@@ -71,14 +69,16 @@ const MySingleQuery = ({ book }) => {
             </div>
             <div className="flex flex-col">
               <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded mb-2">
-                View Detail
+                View
               </button>
-              <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-2">
-                Update
-              </button>
+              <Link to={`/update-query/${_id}`}>
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-6 rounded mb-2">
+                  Update
+                </button>
+              </Link>
               <button
                 onClick={() => handleDelete(_id)}
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2  px-6 rounded">
                 Delete
               </button>
             </div>

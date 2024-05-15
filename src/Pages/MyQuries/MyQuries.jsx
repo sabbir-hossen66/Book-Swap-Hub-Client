@@ -7,6 +7,7 @@ import MySingleQuery from "../../Components/MySingleQuery/MySingleQuery";
 
 const MyQuries = () => {
   const books = useLoaderData()
+  const [seeBooks, setSeeBooks] = useState([])
 
   const [textColor, setTextColor] = useState('red');
 
@@ -46,6 +47,8 @@ const MyQuries = () => {
           books.map(book => <MySingleQuery
             key={book._id}
             book={book}
+            seeBooks={seeBooks}
+            setSeeBooks={setSeeBooks}
           ></MySingleQuery>)
         }
       </div>
