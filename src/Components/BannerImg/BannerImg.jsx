@@ -10,7 +10,7 @@ const BannerImg = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold"> Book Readers</h1>
             <p className="mb-5 text-md">Today, I stand before you not just as a speaker, but as a passionate advocate for the transformative power of reading. In a world filled with distractions and noise, where time is a precious commodity.</p>
-            <Link to={'/quries'}>
+            <Link to={'/my-queries'}>
               <button type="button" className="Banner-Button bg-[#002c42] rounded relative px-16 py-4 ml-4 overflow-hidden font-semibold ">Go to quries</button>
             </Link>
           </div>

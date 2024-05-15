@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import Marquee from "react-fast-marquee";
+import { Helmet } from "react-helmet-async";
 
 
 const AddQuries = () => {
@@ -60,6 +61,10 @@ const AddQuries = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>BookSwap || AddQuries</title>
+      </Helmet>
+
       <Marquee speed={200} direction={'right'}>
         <h2 className="font-bold text-3xl text-center my-8 text-purple-500">This Is Add Quries Part </h2>
       </Marquee>

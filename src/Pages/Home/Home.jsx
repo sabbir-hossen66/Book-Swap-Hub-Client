@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Banner from "../../Components/Banner/Banner";
 import BannerImg from "../../Components/BannerImg/BannerImg";
 import Blogs from "../../Components/Blogs/Blogs";
@@ -9,6 +10,9 @@ import Queries from "../Queries/Queries";
 const Home = () => {
   return (
     <>
+      <Helmet>
+        <title>BookSwap || Home</title>
+      </Helmet>
       <div className="max-w-screen-2xl mx-auto">
         <Banner></Banner>
       </div>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import MySingleQuery from "../../Components/MySingleQuery/MySingleQuery";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -13,6 +14,9 @@ const MyQuries = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>BookSwap || Quries</title>
+      </Helmet>
       {/* <h2 className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-4xl font-semibold text-center">This is My quries</h2> */}
       <div
         style={{

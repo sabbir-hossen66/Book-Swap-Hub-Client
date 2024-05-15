@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 
 const ForRecommendation = () => {
@@ -61,6 +62,9 @@ const ForRecommendation = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>BookSwap || Recommendation</title>
+      </Helmet>
       <div
         style={{
           fontSize: '35px',
