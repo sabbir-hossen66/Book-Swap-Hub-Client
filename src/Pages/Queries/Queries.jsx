@@ -11,7 +11,12 @@ const Queries = () => {
     // fetch('/api.json')
     fetch('http://localhost:5000/posts')
       .then(res => res.json())
-      .then(data => setQuries(data))
+      .then(data => {
+        const sortedData = data.sort((a, b) => new Date(b.time) - new Date(a.time));
+        setQuries(sortedData)
+      }
+
+      )
   }, [])
   return (
     <div>
@@ -28,13 +33,13 @@ const Queries = () => {
       >
         <TypeAnimation
           sequence={[
-            'This Is About',
+            'This Is ',
             800,
             () => setTextColor('deeppink'),
-            'This Is About Quries',
+            'This Is Quries',
             800,
             () => setTextColor('red'),
-            'This Is About Quries Part',
+            'This Is Quries Part',
             1000,
             () => setTextColor('[#FB923C]'),
             '',
