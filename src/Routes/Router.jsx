@@ -10,6 +10,7 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import MySingleQuery from "../Components/MySingleQuery/MySingleQuery";
 import UpdateQuery from "../Components/UpdateQuery/UpdateQuery";
 import DetailQuery from "../Components/DetailQuery/DetailQuery";
+import OnlyMyQuries from "../Pages/OnlyMyQuries/OnlyMyQuries";
 
 
 export const router = createBrowserRouter([
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
       {
         path: "/mySingle-query",
         element: <MySingleQuery></MySingleQuery>,
+
+      },
+      {
+        path: "/onlymy-quries",
+        element: <OnlyMyQuries></OnlyMyQuries>,
 
       },
       {

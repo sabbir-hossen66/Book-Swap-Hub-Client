@@ -39,12 +39,13 @@ const Nav = () => {
 
   const navLinks = <>
     <li className="head-section font-semibold"><NavLink to={'/'}>Home</NavLink></li>
-    <li className="head-section font-semibold"><NavLink to={'/my-queries'}>MyQuries</NavLink></li>
+    <li className="head-section font-semibold"><NavLink to={'/my-queries'}>Quries</NavLink></li>
     {
       user?.email ?
         <>
           <li className="head-section font-semibold"><NavLink to={'/my-list'}>Recommendations
             For Me</NavLink></li>
+          <li className="head-section font-semibold"><NavLink to={'/onlymy-quries'}>MyQuries</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/my-list'}>My recommendations</NavLink></li>
         </>
