@@ -1,9 +1,16 @@
+import Aos from "aos";
 import { useEffect, useState } from "react";
-
+import 'aos/dist/aos.css';
 
 const Query = ({ singleQuery }) => {
 
   const [currentDate, setCurrentDate] = useState(new Date());
+
+  /* use animation */
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentDate(new Date());
@@ -17,7 +24,7 @@ const Query = ({ singleQuery }) => {
 
   return (
     <div>
-      <div className="max-w-2xl overflow-hidden  rounded-lg shadow-xl">
+      <div className="max-w-2xl overflow-hidden  rounded-lg shadow-xl" data-aos="zoom-in">
         <img className="object-cover w-full h-64" src={productPhoto} alt="Article" />
 
         <div className="p-6">
@@ -29,7 +36,7 @@ const Query = ({ singleQuery }) => {
             <p className="mt-2 text-sm text-gray-800 dark:text-gray-400">date_posted: <span className="text-blue-600 uppercase dark:text-blue-500 font-semibold">{time}</span></p>
           </div>
 
-          <div className="mt-4">
+          <div className="mt-4" data-aos="zoom-out">
             <div className="flex items-center">
               <div className="flex items-center">
                 <img className="object-cover h-10 rounded-full" src={image} alt="Avatar" />

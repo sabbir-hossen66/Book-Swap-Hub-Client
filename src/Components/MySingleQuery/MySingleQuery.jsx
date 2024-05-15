@@ -1,10 +1,17 @@
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
-
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+import Aos from "aos";
 
 const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
-
   const { _id, productName, brandProduct, title, boycot, productPhoto, email, userName, image, time } = book;
+
+  /* use animation */
+  useEffect(() => {
+    Aos.init({ duration: 2000 })
+  }, [])
+
   const handleDelete = (_id) => {
 
     Swal.fire({
@@ -44,7 +51,7 @@ const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
   return (
     <div>
 
-      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden py-4 px-2">
+      <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl overflow-hidden py-4 px-2" data-aos="flip-right">
         <div className="relative">
           <img
             className="w-full h-64 object-cover"

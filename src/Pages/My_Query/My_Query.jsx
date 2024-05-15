@@ -52,7 +52,7 @@ const My_Query = () => {
       <Helmet>
         <title>BookSwap || MyQueries</title>
       </Helmet>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16 gap-6">
 
         {
           queryData?.map((data) => data.email === user?.email && (

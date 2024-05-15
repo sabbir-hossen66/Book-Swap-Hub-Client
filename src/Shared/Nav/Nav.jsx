@@ -58,7 +58,7 @@ const Nav = () => {
   </>
 
   return (
-    <div className="head-background navbar bg-base-100 sticky top-0 z-50">
+    <div className="head-background navbar bg-base-100 sticky top-0 z-50" data-aos="fade-down">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn-success lg:hidden">
