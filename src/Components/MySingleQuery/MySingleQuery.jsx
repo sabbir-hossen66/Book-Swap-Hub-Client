@@ -27,14 +27,15 @@ const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
           .then(data => {
             console.log(data);
             if (data.deletedCount > 0) {
-              const remainingBooks = seeBooks.filter(singleDeleteBooks => singleDeleteBooks._id !== _id)
-              setSeeBooks(remainingBooks)
               Swal.fire({
                 title: "Deleted!",
                 text: "Your book has been deleted.",
                 icon: "success"
               });
+              const remainingBooks = seeBooks.filter(singleDeleteBook => singleDeleteBook._id !== _id)
+              setSeeBooks(remainingBooks)
             }
+
           })
       }
     });
@@ -68,9 +69,11 @@ const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
 
             </div>
             <div className="flex flex-col">
-              <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded mb-2">
-                View
-              </button>
+              <Link to={`/detail-query/${_id}`}>
+                <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded mb-2">
+                  Details
+                </button>
+              </Link>
               <Link to={`/update-query/${_id}`}>
                 <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2  px-6 rounded mb-2">
                   Update
