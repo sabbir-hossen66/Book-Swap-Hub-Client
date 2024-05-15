@@ -3,11 +3,9 @@ import Swal from "sweetalert2";
 
 
 const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
+
   const { _id, productName, brandProduct, title, boycot, productPhoto, email, userName, image, time } = book;
-
-
   const handleDelete = (_id) => {
-    console.log(_id);
 
     Swal.fire({
       title: "Are you sure?",
@@ -32,7 +30,8 @@ const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
                 text: "Your book has been deleted.",
                 icon: "success"
               });
-              const remainingBooks = seeBooks.filter(singleDeleteBook => singleDeleteBook._id !== _id)
+              const remainingBooks = seeBooks.filter(singleDeleteBook => (singleDeleteBook._id) !== _id)
+              console.log(remainingBooks);
               setSeeBooks(remainingBooks)
             }
 
@@ -88,17 +87,20 @@ const MySingleQuery = ({ book, seeBooks, setSeeBooks }) => {
           </div>
         </div>
 
-        {/* set another  */}
-        <div className="mt-4">
-          <div className="flex items-center">
-            <div className="flex items-center">
-              <img className="object-cover h-10 rounded-full" src={image} alt="Avatar" />
-              <a href="#" className="mx-2 font-semibold text-[#FB923C] " tabIndex="0" role="link">{userName}</a>
+        {/* start another */}
+        <div className="flex items-center">
+          <img
+            className="w-10 h-10 rounded-full mr-4"
+            src={image}
+            alt="User Avatar"
+          />
+          <div>
+            <div className="flex justify-center  items-center">
+              <p className="mx-2 font-semibold text-[#FB923C]">{userName}</p>
+              <p className="mx-1 text-xs font-medium text-[#618CF6]">{time}</p>
             </div>
-            <span className="mx-1 text-xs font-medium text-[#618CF6]">{time}</span>
-
+            <p className="mx-1 text-xs font-medium text-[#618CF6]">{email}</p>
           </div>
-          <p className="text-sm font-medium text-gray-700">email: <span className="text-[#618CF6]"> {email}</span></p>
         </div>
 
       </div>
