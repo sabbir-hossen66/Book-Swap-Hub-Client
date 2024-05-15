@@ -1,8 +1,15 @@
-# React + Vite
+# BookSwapHub
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/)
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-This Project is created by JS technology
+-Server and Client both of sides language are JS
+-Mainly I used JS library React in client side
+-In backend here is using express and mongodb
+-For Authincation intregration I used firebase
+-This project i used marquee method, React type writer method.
+-I used AOS animation 
+-Also used some technology
+-For designing purpose I used Tailwind css and it's too much component
+*This Project is about BookSwapHub. in this project There are some features.
+*But One features mostly i like that is  My-Query.
