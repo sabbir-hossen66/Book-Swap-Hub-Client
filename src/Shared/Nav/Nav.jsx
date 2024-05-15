@@ -43,7 +43,7 @@ const Nav = () => {
     {
       user?.email ?
         <>
-          <li className="head-section font-semibold"><NavLink to={'/my-list'}>Recommendations
+          <li className="head-section font-semibold"><NavLink to={'/see_recom'}>Recommendations
             For Me</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/my_query'}>MyQuries</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>

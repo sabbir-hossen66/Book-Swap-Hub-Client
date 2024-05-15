@@ -1,21 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
+import { AuthContext } from "../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const ForRecommendation = () => {
+  const { user } = useContext(AuthContext)
+
   const [textColor, setTextColor] = useState('red');
+
   const [formData, setFormData] = useState({
     queryId: '',
     queryTitle: '',
     productName: '',
     userEmail: '',
     userName: '',
+    productPhoto: '',
     recommenderEmail: '',
     recommenderName: '',
     currentTimeStamp: '',
   });
 
   const handleChange = (e) => {
+    e.preventDefault();
+
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
@@ -26,6 +34,30 @@ const ForRecommendation = () => {
     e.preventDefault();
     // Handle form submission here, e.g., send data to backend
     console.log(formData);
+    // send data to server
+    fetch('http://localhost:5000/recommendation', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: 'success!',
+            text: 'Recommendation is done',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          })
+          e.target.reset()
+        }
+
+      })
+
+
   };
   return (
     <div>
@@ -72,11 +104,16 @@ const ForRecommendation = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="userEmail" className="block text-[#618CF6] font-semibold">User Email:</label>
-            <input type="email" id="userEmail" name="userEmail" value={formData.userEmail} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
+            <input type="email" id="userEmail" name="userEmail" value={user?.userEmail} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
           </div>
           <div className="mb-4">
             <label htmlFor="userName" className="block text-[#618CF6] font-semibold">User Name:</label>
-            <input type="text" id="userName" name="userName" value={formData.userName} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
+            <input type="text" id="userName" name="userName" value={user?.userName} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
+          </div>
+          <div className="mb-4">
+            <label className="input-group">
+              <input type="url" name="photoURL" placeholder="Drop Here Product Image-URL" className="input input-bordered w-full" />
+            </label>
           </div>
           <div className="mb-4">
             <label htmlFor="recommenderEmail" className="block text-[#618CF6] font-semibold">Recommender Email:</label>
@@ -88,7 +125,8 @@ const ForRecommendation = () => {
           </div>
           <div className="mb-4">
             <label htmlFor="currentTimeStamp" className="block text-[#618CF6] font-semibold ">Current Time-Stamp:</label>
-            <input type="text" id="currentTimeStamp" name="currentTimeStamp" value={formData.currentTimeStamp} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
+
+            <input type="date" id="currentTimeStamp" name="currentTimeStamp" value={formData.currentTimeStamp} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
           </div>
           <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
         </form>

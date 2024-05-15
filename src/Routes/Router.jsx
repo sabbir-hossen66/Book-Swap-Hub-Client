@@ -12,6 +12,7 @@ import UpdateQuery from "../Components/UpdateQuery/UpdateQuery";
 import DetailQuery from "../Components/DetailQuery/DetailQuery";
 import OnlyMyQuries from "../Pages/OnlyMyQuries/OnlyMyQuries";
 import My_Query from "../Pages/My_Query/My_Query";
+import SeeRecommendationData from "../Components/SeeRecommendationData/SeeRecommendationData";
 
 
 export const router = createBrowserRouter([
@@ -68,6 +69,11 @@ export const router = createBrowserRouter([
         path: "/my_query",
         element: <My_Query></My_Query>,
         loader: () => fetch(`http://localhost:5000/posts`)
+      },
+      {
+        path: "/see_recom",
+        element: <SeeRecommendationData></SeeRecommendationData>,
+        loader: () => fetch(`http://localhost:5000/recommendation`)
 
       },
 
