@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-queries",
-        element: <MyQuries></MyQuries>,
+        element: <PrivateRoutes><MyQuries></MyQuries></PrivateRoutes>,
         loader: () => fetch('http://localhost:5000/posts')
       },
       {
@@ -34,6 +34,7 @@ export const router = createBrowserRouter([
       {
         path: "/update-query/:id",
         element: <UpdateQuery></UpdateQuery>,
+        loader: ({ params }) => fetch(`http://localhost:5000/posts/${params.id}`)
 
       },
       {

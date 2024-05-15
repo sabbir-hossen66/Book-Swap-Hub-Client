@@ -49,7 +49,7 @@ const AddQuries = () => {
         if (data.insertedId) {
           Swal.fire({
             title: 'success',
-            text: 'Do you want to continue',
+            text: 'Add Quries Successfully',
             icon: 'success',
             confirmButtonText: 'OK'
           })
