@@ -1,3 +1,4 @@
+import Swal from "sweetalert2";
 
 
 const MySingleQuery = ({ book }) => {
@@ -6,6 +7,40 @@ const MySingleQuery = ({ book }) => {
 
   const handleDelete = (_id) => {
     console.log(_id);
+
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Swal.fire({
+        //   title: "Deleted!",
+        //   text: "Your file has been deleted.",
+        //   icon: "success"
+        // });
+        console.log('delete ');
+        fetch(`http://localhost:5000/posts/${_id}`, {
+          method: 'DELETE'
+        })
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your book has been deleted.",
+                icon: "success"
+              });
+            }
+          })
+      }
+    });
+
   }
 
   return (
