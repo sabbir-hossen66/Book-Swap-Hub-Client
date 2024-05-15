@@ -8,7 +8,6 @@ const Queries = () => {
   const [textColor, setTextColor] = useState('red');
 
   useEffect(() => {
-    // fetch('/api.json')
     fetch('http://localhost:5000/posts')
       .then(res => res.json())
       .then(data => {
