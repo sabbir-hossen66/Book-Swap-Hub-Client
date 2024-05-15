@@ -13,7 +13,8 @@ const Queries = () => {
       .then(res => res.json())
       .then(data => {
         const sortedData = data.sort((a, b) => new Date(b.time) - new Date(a.time));
-        setQuries(sortedData)
+        const limitedData = sortedData.slice(0, 6);
+        setQuries(limitedData);
       }
 
       )
