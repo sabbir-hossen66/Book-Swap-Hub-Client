@@ -11,6 +11,7 @@ import MySingleQuery from "../Components/MySingleQuery/MySingleQuery";
 import UpdateQuery from "../Components/UpdateQuery/UpdateQuery";
 import DetailQuery from "../Components/DetailQuery/DetailQuery";
 import OnlyMyQuries from "../Pages/OnlyMyQuries/OnlyMyQuries";
+import My_Query from "../Pages/My_Query/My_Query";
 
 
 export const router = createBrowserRouter([
@@ -37,6 +38,7 @@ export const router = createBrowserRouter([
         path: "/onlymy-quries",
         element: <OnlyMyQuries></OnlyMyQuries>,
 
+
       },
       {
         path: "/detail-query/:id",
@@ -61,6 +63,12 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/my_query",
+        element: <My_Query></My_Query>,
+        loader: () => fetch(`http://localhost:5000/posts`)
+
       },
 
     ],

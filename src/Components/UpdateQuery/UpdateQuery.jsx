@@ -121,7 +121,7 @@ const UpdateQuery = () => {
           </div>
 
 
-          <input type="submit" value="Submit Your Quries" className="btn btn-block  py-3  overflow-hidden font-semibold rounded bg-[#FB923C] hover:bg-purple-600 text-white text-xl" />
+          <input type="submit" value="update Your Quries" className="btn btn-block  py-3  overflow-hidden font-semibold rounded bg-[#FB923C] hover:bg-purple-600 text-white text-xl" />
 
         </form>
       </div>
