@@ -47,7 +47,7 @@ const My_Query = () => {
   }
   console.log(queryData);
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 my-16">
 
       {
         queryData?.map((data) => data.email === user?.email && (
@@ -66,7 +66,7 @@ const My_Query = () => {
               </div>
               <div className="px-6 py-4">
                 <div className="flex justify-between items-center">
-                  <div>
+                  <div >
                     <div className="font-bold text-xl mb-2 hover:underline cursor-pointer text-[#FB923C]"
                     >{data.title}</div>
                     <p className="text-gray-700 text-base ">product_name: <span className="font-medium text-[#618CF6]">{data.productName}</span></p>
@@ -75,7 +75,7 @@ const My_Query = () => {
 
 
                   </div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col ml-6">
                     <Link to={`/detail-query/${data._id}`}>
                       <button className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-6 rounded mb-2">
                         Details
@@ -96,20 +96,20 @@ const My_Query = () => {
               </div>
 
               {/* start another */}
-              {/* <div className="flex items-center">
+              <div className="flex items-center">
                 <img
                   className="w-10 h-10 rounded-full mr-4"
-                  src={image}
+                  src={user?.photoURL}
                   alt="User Avatar"
                 />
                 <div>
                   <div className="flex justify-center  items-center">
-                    <p className="mx-2 font-semibold text-[#FB923C]">{userName}</p>
-                    <p className="mx-1 text-xs font-medium text-[#618CF6]">{time}</p>
+                    <p className="mx-2 font-semibold text-[#FB923C]">{user?.displayName}</p>
+                    <p className="mx-1 text-xs font-medium text-[#618CF6]">{data.time}</p>
                   </div>
-                  <p className="mx-1 text-xs font-medium text-[#618CF6]">{email}</p>
+                  <p className="mx-1 text-xs font-medium text-[#618CF6]">{user?.email}</p>
                 </div>
-              </div> */}
+              </div>
 
             </div>
           </>
