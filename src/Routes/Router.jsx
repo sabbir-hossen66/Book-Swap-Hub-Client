@@ -10,9 +10,9 @@ import PrivateRoutes from "./PrivateRoutes/PrivateRoutes";
 import MySingleQuery from "../Components/MySingleQuery/MySingleQuery";
 import UpdateQuery from "../Components/UpdateQuery/UpdateQuery";
 import DetailQuery from "../Components/DetailQuery/DetailQuery";
-import OnlyMyQuries from "../Pages/OnlyMyQuries/OnlyMyQuries";
 import My_Query from "../Pages/My_Query/My_Query";
 import SeeRecommendationData from "../Components/SeeRecommendationData/SeeRecommendationData";
+import MyRecommendation from "../Pages/MyRecommendation/MyRecommendation";
 
 
 export const router = createBrowserRouter([
@@ -35,12 +35,7 @@ export const router = createBrowserRouter([
         element: <MySingleQuery></MySingleQuery>,
 
       },
-      {
-        path: "/onlymy-quries",
-        element: <OnlyMyQuries></OnlyMyQuries>,
 
-
-      },
       {
         path: "/detail-query/:id",
         element: <DetailQuery></DetailQuery>,
@@ -73,6 +68,12 @@ export const router = createBrowserRouter([
       {
         path: "/see_recom",
         element: <SeeRecommendationData></SeeRecommendationData>,
+        loader: () => fetch(`http://localhost:5000/recommendation`)
+
+      },
+      {
+        path: "/my_recom",
+        element: <MyRecommendation></MyRecommendation>,
         loader: () => fetch(`http://localhost:5000/recommendation`)
 
       },

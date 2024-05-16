@@ -47,7 +47,7 @@ const Nav = () => {
             For Me</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/my_query'}>MyQuries</NavLink></li>
           <li className="head-section font-semibold"><NavLink to={'/add-quries'}>AddQuries</NavLink></li>
-          <li className="head-section font-semibold"><NavLink to={'/my-list'}>My recommendations</NavLink></li>
+          <li className="head-section font-semibold"><NavLink to={'my_recom'}>My recommendations</NavLink></li>
         </>
         :
         <>
