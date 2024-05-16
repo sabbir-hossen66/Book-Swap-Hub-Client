@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
       {
         path: "/my-queries",
         element: <PrivateRoutes><MyQuries></MyQuries></PrivateRoutes>,
-        loader: () => fetch('http://localhost:5000/posts')
+        loader: () => fetch('https://book-swap-server.vercel.app/posts')
       },
       {
         path: "/mySingle-query",
@@ -39,13 +39,13 @@ export const router = createBrowserRouter([
       {
         path: "/detail-query/:id",
         element: <DetailQuery></DetailQuery>,
-        loader: ({ params }) => fetch(`http://localhost:5000/posts/${params.id}`)
+        loader: ({ params }) => fetch(`https://book-swap-server.vercel.app/posts/${params.id}`)
 
       },
       {
         path: "/update-query/:id",
         element: <UpdateQuery></UpdateQuery>,
-        loader: ({ params }) => fetch(`http://localhost:5000/posts/${params.id}`)
+        loader: ({ params }) => fetch(`https://book-swap-server.vercel.app/posts/${params.id}`)
 
       },
       {
@@ -63,18 +63,18 @@ export const router = createBrowserRouter([
       {
         path: "/my_query",
         element: <My_Query></My_Query>,
-        loader: () => fetch(`http://localhost:5000/posts`)
+        loader: () => fetch(`https://book-swap-server.vercel.app/posts`)
       },
       {
         path: "/see_recom",
         element: <SeeRecommendationData></SeeRecommendationData>,
-        loader: () => fetch(`http://localhost:5000/recommendation`)
+        loader: () => fetch(`https://book-swap-server.vercel.app/recommendation`)
 
       },
       {
         path: "/my_recom",
         element: <MyRecommendation></MyRecommendation>,
-        loader: () => fetch(`http://localhost:5000/recommendation`)
+        loader: () => fetch(`https://book-swap-server.vercel.app/recommendation`)
 
       },
 

@@ -38,7 +38,7 @@ const UpdateQuery = () => {
     console.log(updateQuries);
 
     // send data to the server
-    fetch(`http://localhost:5000/posts/${_id}`, {
+    fetch(`https://book-swap-server.vercel.app/posts/${_id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

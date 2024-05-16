@@ -8,7 +8,7 @@ const Queries = () => {
   const [textColor, setTextColor] = useState('red');
 
   useEffect(() => {
-    fetch('http://localhost:5000/posts')
+    fetch('https://book-swap-server.vercel.app/posts')
       .then(res => res.json())
       .then(data => {
         const sortedData = data.sort((a, b) => new Date(b.time) - new Date(a.time));

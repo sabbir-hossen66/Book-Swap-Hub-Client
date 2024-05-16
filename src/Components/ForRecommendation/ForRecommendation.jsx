@@ -16,7 +16,7 @@ const ForRecommendation = () => {
     productName: '',
     userEmail: '',
     userName: '',
-    productPhoto: '',
+    photoURL: '',
     recommenderEmail: '',
     recommenderName: '',
     currentTimeStamp: '',
@@ -36,7 +36,7 @@ const ForRecommendation = () => {
     // Handle form submission here, e.g., send data to backend
     console.log(formData);
     // send data to server
-    fetch('http://localhost:5000/recommendation', {
+    fetch('https://book-swap-server.vercel.app/recommendation', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -71,8 +71,7 @@ const ForRecommendation = () => {
           color: textColor,
           textAlign: "center",
           fontWeight: "bold"
-          /* when working without ref and classNames, the manipulated style needs to be
-           applied to the parent element, because the TypeAnimation component is perma-memoized */
+
         }}
       >
         <TypeAnimation
@@ -114,11 +113,13 @@ const ForRecommendation = () => {
             <label htmlFor="userName" className="block text-[#618CF6] font-semibold">User Name:</label>
             <input type="text" id="userName" name="userName" value={user?.userName} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />
           </div>
+
           <div className="mb-4">
             <label className="input-group">
-              <input type="url" name="photoURL" placeholder="Drop Here Product Image-URL" className="input input-bordered w-full" />
+              <input type="url" name="photoURL" placeholder="Drop Here Product Image-URL" value={formData.photoURL} onChange={handleChange} className="input input-bordered w-full" />
             </label>
           </div>
+
           <div className="mb-4">
             <label htmlFor="recommenderEmail" className="block text-[#618CF6] font-semibold">Recommender Email:</label>
             <input type="email" id="recommenderEmail" name="recommenderEmail" value={formData.recommenderEmail} onChange={handleChange} className="border border-gray-300 rounded-md px-3 py-2 mt-1 w-full" />

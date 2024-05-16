@@ -4,7 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 
 const MySingleRecom = ({ singleRecom }) => {
   const { user } = useContext(AuthContext)
-  const { productName, queryTitle, recommenderEmail, recommenderName, currentTimeStamp, userEmail, userName } = singleRecom;
+  const { productName, queryTitle, recommenderEmail, recommenderName, currentTimeStamp, userEmail, userName, photoURL } = singleRecom;
 
 
   return (
@@ -13,7 +13,7 @@ const MySingleRecom = ({ singleRecom }) => {
         <div className="container px-6 py-10 mx-auto">
           <div>
             <div className="relative">
-              <img className="object-cover object-center w-full h-64 rounded-lg lg:h-80" src="https://images.unsplash.com/photo-1624996379697-f01d168b1a52?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="" />
+              <img className="object-cover object-center w-full h-64 rounded-lg lg:h-80" src={photoURL} alt="" />
 
               <div className="absolute bottom-0 flex p-3 bg-white dark:bg-gray-900 ">
                 <img className="object-cover object-center w-10 h-10 rounded-full" src={user?.photoURL} alt="" />

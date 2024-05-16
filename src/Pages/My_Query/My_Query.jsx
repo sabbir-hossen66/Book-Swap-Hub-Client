@@ -24,7 +24,7 @@ const My_Query = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         console.log('delete ');
-        fetch(`http://localhost:5000/posts/${_id}`, {
+        fetch(`https://book-swap-server.vercel.app/posts/${_id}`, {
           method: 'DELETE'
         })
           .then(res => res.json())

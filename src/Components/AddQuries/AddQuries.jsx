@@ -37,7 +37,7 @@ const AddQuries = () => {
     console.log(addQuries);
 
     // send data to the server
-    fetch('http://localhost:5000/posts', {
+    fetch('https://book-swap-server.vercel.app/posts', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
