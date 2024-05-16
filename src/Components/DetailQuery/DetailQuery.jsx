@@ -26,7 +26,7 @@ const DetailQuery = () => {
   return (
     <div>
       <Marquee direction="right" speed={200}>
-        <h2 className="text-3xl text-center  text-[#618CF6] my-6 font-bold"> This is Detail Book Page </h2>
+        <h2 className="text-3xl text-center  text-[#618CF6] my-6 font-bold"> This is About Book Details</h2>
       </Marquee>
       <div>
         <div className="max-w-3xl mx-auto h-96 bg-white shadow-lg rounded-lg overflow-hidden my-16 flex flex-col md:flex-row lg:flex-row" data-aos="fade-down">

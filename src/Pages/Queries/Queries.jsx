@@ -60,8 +60,9 @@ const Queries = () => {
 
       <div className="flex flex-col md:flex-row justify-center gap-2 mb-4 mt-4">
         <button onClick={() => toggleLayout('grid')}
-          className="bg-[#FB923C] text-white font-semibold rounded-md p-3">Grid LayOut</button>
-        <button onClick={() => toggleLayout('list')} className="bg-blue-500 text-white font-bold rounded-md p-3">Change LayOut</button>
+          className="bg-[#FB923C]  text-white font-bold rounded-md p-3">Grid LayOut</button>
+        <button onClick={() => toggleLayout('list')}
+          className="bg-blue-500 text-white font-bold rounded-md p-3">Change LayOut</button>
       </div>
 
       {/* <div className="container mx-auto gap-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-center items-center my-16">

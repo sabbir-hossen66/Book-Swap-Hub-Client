@@ -18,22 +18,22 @@ const Contact = () => {
       >
         <TypeAnimation
           sequence={[
-            'You Can',
+            'This is',
             800,
             () => setTextColor('firebrick'),
-            'You Can Contact',
+            'This is About',
             800,
             () => setTextColor('deeppink'),
-            'You Can Contact With',
+            'This is About Contact',
             1000,
             () => setTextColor('blue'),
-            'You Can Contact With Us',
+            'This is About Contact Us',
             1000,
           ]}
           repeat={Infinity}
         />
       </div>
-      <section className="bg-white dark:bg-gray-900">
+      <section className="bg-white dark:bg-gray-900 mt-6">
         <div className="container px-6 py-12 mx-auto">
           <div>
             <p className="font-medium text-blue-500 dark:text-blue-400">Contact us</p>

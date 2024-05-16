@@ -72,8 +72,10 @@ const Nav = () => {
           <Link to={'/'}>
             <img className="w-10 lg:w-20 mr-2" src="https://i.ibb.co/9bqV9p3/book-logho-removebg-preview.png" alt="" />
           </Link>
+          {/* <Link to={'/'}> <p className="text-sm lg:text-2xl font-montserrat font-bold text-[#002c42]">
+            <span className="text-orange-400">Book<span className="text-purple-600">_S</span>wap</span><span className="text-purple-600">_H</span><span className="text-orange-400">ub</span></p></Link> */}
           <Link to={'/'}> <p className="text-sm lg:text-2xl font-montserrat font-bold text-[#002c42]">
-            <span className="text-orange-400">Book<span className="text-purple-600">_S</span>wap</span><span className="text-purple-600">_H</span><span className="text-orange-400">ub</span></p></Link>
+            <span className="text-orange-400">Book<span className="text-purple-600">S</span>wap</span><span className="text-purple-600">H</span><span className="text-orange-400">ub</span></p></Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
