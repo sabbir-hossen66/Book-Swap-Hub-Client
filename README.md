@@ -1,8 +1,9 @@
 # BookSwapHub
+[Live-link](https://book-swap-hub-c14d4.web.app/) 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/)
 
--This Project is created by JS technology
+
+-This Project is created by React technology
 -Server and Client both of sides language are JS
 -Mainly I used JS library React in client side
 -In backend here is using express and mongodb
